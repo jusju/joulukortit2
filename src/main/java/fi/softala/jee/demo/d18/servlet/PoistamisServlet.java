@@ -1,6 +1,7 @@
 package fi.softala.jee.demo.d18.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import fi.softala.jee.demo.d18.bean.Osoite;
 import fi.softala.jee.demo.d18.dao.OsoiteDAO;
 
 /**
@@ -39,6 +41,10 @@ public class PoistamisServlet extends HttpServlet {
 				"spring-config.xml");
 		OsoiteDAO dao = (OsoiteDAO) context.getBean("daoLuokka");
 		dao.poista(Integer.parseInt(id+""));
+		
+		ArrayList<Osoite> osoitteet = dao.haeKaikki();
+		request.setAttribute("osoitteet", osoitteet);
+		
 		RequestDispatcher disp = request.getRequestDispatcher("WEB-INF/nakymat/osoitteet.jsp");
 		disp.forward(request, response);
 	}
