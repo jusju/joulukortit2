@@ -8,11 +8,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
 /**
  * Servlet implementation class KirjautumisServlet
  */
 @WebServlet("/KirjautumisServlet")
 public class KirjautumisServlet extends HttpServlet {
+	
+	final static Logger logger = LoggerFactory.getLogger(fi.softala.jee.demo.d18.servlet.KirjautumisServlet.class);
 	private static final long serialVersionUID = 1L;
        
     /**
