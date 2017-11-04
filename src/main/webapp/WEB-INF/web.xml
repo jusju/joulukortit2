@@ -1,111 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://java.sun.com/xml/ns/javaee"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
-       http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-       version="2.5">
-
-
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <servlet>
-    <description>
-    </description>
-    <display-name>
- 		Kirjaudu
-  	</display-name>
-    <servlet-name>kirjaudu</servlet-name>
-    <servlet-class>
-  		fi.softala.jee.demo.d18.servlet.KirjautumisServlet
-  	</servlet-class>
+    <servlet-name>spring</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
   </servlet>
+  <servlet-mapping>
+    <servlet-name>spring</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
   
-  <servlet-mapping>
-    <servlet-name>kirjaudu</servlet-name>
-    <url-pattern>/kirjaudu</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description>
- 
-    </description>
-    <display-name>
-                Poista
-        	</display-name>
-    <servlet-name>Poista</servlet-name>
-    <servlet-class>
-  		        fi.softala.jee.demo.d18.servlet.PoistamisServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Poista</servlet-name>
-    <url-pattern>/poistaOsoite</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description>
- 
-    </description>
-    <display-name>
-                Lisää
-    </display-name>
-    <servlet-name>Lisaa</servlet-name>
-    <servlet-class>
-  		        fi.softala.jee.demo.d18.servlet.OsoitteenLisaysServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>TallennaOsoite</servlet-name>
-    <url-pattern>/lisaaOsoiteOsoite</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
-    <description>
- 
-    </description>
-    <display-name>
-                Tallenna
-    </display-name>
-    <servlet-name>TallennaOsoite</servlet-name>
-    <servlet-class>
-  		        fi.softala.jee.demo.d18.servlet.OsoitteenTallennusServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>TallennaOsoite</servlet-name>
-    <url-pattern>/kirjaaYlosOsoite</url-pattern>
-  </servlet-mapping>
-
-
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>kirjautuminen.html</welcome-file>
-    <welcome-file>kirjautuminen.htm</welcome-file>
-    <welcome-file>kirjautuminen.jsp</welcome-file>
-  </welcome-file-list>
-  <servlet>
-    <description></description>
-    <display-name>PoistamisServlet</display-name>
-    <servlet-name>PoistamisServlet</servlet-name>
-    <servlet-class>fi.softala.jee.demo.d18.servlet.PoistamisServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>PoistamisServlet</servlet-name>
-    <url-pattern>/PoistamisServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>OsoitteenLisaysServlet</display-name>
-    <servlet-name>OsoitteenLisaysServlet</servlet-name>
-    <servlet-class>fi.softala.jee.demo.d18.servlet.OsoitteenLisaysServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>OsoitteenLisaysServlet</servlet-name>
-    <url-pattern>/OsoitteenLisaysServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>OsoitteenTallennusServlet</display-name>
-    <servlet-name>OsoitteenTallennusServlet</servlet-name>
-    <servlet-class>fi.softala.jee.demo.d18.servlet.OsoitteenTallennusServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>OsoitteenTallennusServlet</servlet-name>
-    <url-pattern>/OsoitteenTallennusServlet</url-pattern>
-  </servlet-mapping>
+  <listener> 
+	<listener-class> 
+		org.springframework.web.context.ContextLoaderListener 
+	</listener-class> 
+  </listener>
 </web-app>

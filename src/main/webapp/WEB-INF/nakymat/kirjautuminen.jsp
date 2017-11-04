@@ -12,7 +12,7 @@
 		<tr><td>Salasana:</td><td><input type="password" name="salasana" /></td></tr>
 		<tr><td>&nbsp;</td><td><input type="submit" value="Kirjaudu"></td></tr>
 	</table>
-	Hint: name of a daughter both for username and password
+	Hint: name of a daughter both for username and password. Uusi versio.
 </form>
 </body>
 </html>
