@@ -7,7 +7,7 @@
   <name>joulukortit2</name>
   <description>Joulukorttien lähettelyä - Maven mukana</description>
   <build>
-  	<finalName>joulukortit2.war</finalName>
+  	<finalName>joulukortit2</finalName>
   </build>
     
   <properties>
