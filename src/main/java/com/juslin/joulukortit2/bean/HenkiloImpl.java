@@ -1,4 +1,4 @@
-package fi.softala.jee.demo.d14.bean;
+package com.juslin.joulukortit2.bean;
 
 public class HenkiloImpl implements Henkilo {
 

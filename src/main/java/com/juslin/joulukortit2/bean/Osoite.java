@@ -1,4 +1,4 @@
-package fi.softala.jee.demo.d18.bean;
+package com.juslin.joulukortit2.bean;
 
 public class Osoite {
 	private int id;

@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
 @WebServlet("/KirjautumisServlet")
 public class KirjautumisServlet extends HttpServlet {
 	
-	final static Logger logger = LoggerFactory.getLogger(fi.softala.jee.demo.d18.servlet.KirjautumisServlet.class);
+	final static Logger logger = LoggerFactory.getLogger(com.juslin.joulukortit2.servlet.KirjautumisServlet.class);
 	private static final long serialVersionUID = 1L;
        
     /**

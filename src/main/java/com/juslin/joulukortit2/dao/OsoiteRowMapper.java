@@ -1,10 +1,11 @@
-package fi.softala.jee.demo.d18.dao;
+package com.juslin.joulukortit2.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
-import fi.softala.jee.demo.d18.bean.Osoite;
+
+import com.juslin.joulukortit2.bean.Osoite;
 
 
 public class OsoiteRowMapper implements RowMapper<Osoite> {

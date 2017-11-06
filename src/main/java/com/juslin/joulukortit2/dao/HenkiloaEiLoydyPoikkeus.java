@@ -1,4 +1,4 @@
-package fi.softala.jee.demo.d14.dao;
+package com.juslin.joulukortit2.dao;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 

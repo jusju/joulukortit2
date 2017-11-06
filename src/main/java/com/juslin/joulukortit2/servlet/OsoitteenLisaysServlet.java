@@ -1,4 +1,4 @@
-package fi.softala.jee.demo.d18.servlet;
+package com.juslin.joulukortit2.servlet;
 
 import java.io.IOException;
 

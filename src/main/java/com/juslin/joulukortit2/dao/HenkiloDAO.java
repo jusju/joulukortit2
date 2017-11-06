@@ -1,8 +1,8 @@
-package fi.softala.jee.demo.d14.dao;
+package com.juslin.joulukortit2.dao;
 
 import java.util.List;
 
-import fi.softala.jee.demo.d14.bean.Henkilo;
+import com.juslin.joulukortit2.bean.*;
 
 public interface HenkiloDAO {
 

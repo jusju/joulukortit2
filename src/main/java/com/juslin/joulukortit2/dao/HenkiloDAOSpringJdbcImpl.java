@@ -1,4 +1,4 @@
-package fi.softala.jee.demo.d14.dao;
+package com.juslin.joulukortit2.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,7 +15,7 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
-import fi.softala.jee.demo.d14.bean.Henkilo;
+import com.juslin.joulukortit2.bean.Henkilo;
 
 @Repository
 public class HenkiloDAOSpringJdbcImpl implements HenkiloDAO {
