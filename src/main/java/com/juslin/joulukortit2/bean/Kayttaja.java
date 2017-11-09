@@ -45,7 +45,4 @@ public class Kayttaja {
 	public String toString() {
 		return "Kayttaja [id=" + id + ", kayttajatunnus=" + kayttajatunnus + ", salasana=" + salasana + "]";
 	}
-	
-	
-		
 }

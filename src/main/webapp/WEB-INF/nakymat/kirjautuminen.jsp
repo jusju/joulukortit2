@@ -1,3 +1,8 @@
+<%@page contentType="text/html;charset=UTF-8"%>
+<%@page pageEncoding="UTF-8"%>
+<%@ page session="false" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form"  prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,13 +11,25 @@
 </head>
 <body>
 <h1>Kirjaudu</h1>
-<form action="kirjaudu" method="post">
-	<table>
-		<tr><td>K‰ytt‰j‰tunnus:</td><td><input type="text" name="kayttajatunnus"></td></tr>
-		<tr><td>Salasana:</td><td><input type="password" name="salasana" /></td></tr>
-		<tr><td>&nbsp;</td><td><input type="submit" value="Kirjaudu"></td></tr>
-	</table>
-	Hint: name of a daughter both for username and password. Uusi versio.
-</form>
+
+		<form:form modelAttribute="kayttaja" method="post">
+		  	<fieldset>		
+				<legend>Tunnukset</legend>
+				<p>
+					<form:label	path="kayttajatunnus">K√§ytt√§j√§tunnus</form:label><br/>
+					<form:input path="kayttajatunnus" />		
+				</p>
+				<p>	
+					<form:label path="salasana">Salasana</form:label><br/>
+					<form:input path="salasana" />
+				</p>
+				<p>	
+					<button type="submit">Kirjaudu</button>
+				</p>
+			</fieldset>
+		</form:form>
+Hint: name of a daughter both for username and password. Uusi versio.
+
 </body>
 </html>
+
