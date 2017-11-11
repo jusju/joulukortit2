@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,11 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.juslin.joulukortit2.bean.HenkiloImpl;
 import com.juslin.joulukortit2.bean.Kayttaja;
 import com.juslin.joulukortit2.bean.Osoite;
-import com.juslin.joulukortit2.bean.Henkilo;
-import com.juslin.joulukortit2.bean.HenkiloImpl;
+
 import com.juslin.joulukortit2.dao.OsoiteDAO;
 
 @Controller

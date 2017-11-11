@@ -21,6 +21,7 @@
 		<td>osavaltio</td>
 		<td>maa</td>
 		<td>poista</td>
+		<td>muokkaa</td>
 	</tr>
 </thead>
 <tbody>
@@ -34,6 +35,7 @@
 		<td><c:out value="${osoite.osavaltio}"/></td>
 		<td><c:out value="${osoite.maa}"/></td>
 		<td><a href="poistaOsoite?id=<c:out value="${osoite.id}"/>">POISTA</a></td>
+		<td><a href="poistaOsoite?id=<c:out value="${osoite.id}"/>">MUOKKAA</a></td>
 	</tr>
 </c:forEach>
 </tbody>
