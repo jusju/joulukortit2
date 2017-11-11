@@ -11,13 +11,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.juslin.joulukortit2.bean.Henkilo;
 import com.juslin.joulukortit2.bean.HenkiloImpl;
-import com.juslin.joulukortit2.dao.HenkiloDAO;
 
 
 @Controller
 @RequestMapping (value="/henkilot")
 public class HenkiloController {
-
+/*
 	@Inject
 	private HenkiloDAO dao;
 	
@@ -42,16 +41,16 @@ public class HenkiloController {
 	//FORMIN TIETOJEN VASTAANOTTO
 	@RequestMapping(value="uusi", method=RequestMethod.POST)
 	public String create( @ModelAttribute(value="henkilo") HenkiloImpl henkilo) {
-		dao.talleta(henkilo);
+		//dao.talleta(henkilo);
 		return "redirect:/henkilot/" + henkilo.getId();
 	}
 	
 	//HENKILÖN TIETOJEN NÄYTTÄMINEN
 	@RequestMapping(value="{id}", method=RequestMethod.GET)
 	public String getView(@PathVariable Integer id, Model model) {
-		Henkilo henkilo = dao.etsi(id);
+		//Henkilo henkilo = dao.etsi(id);
 		model.addAttribute("henkilo", henkilo);
 		return "henk/view";
 	}
-	
+	*/
 }

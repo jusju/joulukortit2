@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.juslin.joulukortit2.bean.HenkiloImpl;
 import com.juslin.joulukortit2.bean.Kayttaja;
 import com.juslin.joulukortit2.bean.Osoite;
-import com.juslin.joulukortit2.dao.HenkiloDAO;
 import com.juslin.joulukortit2.bean.Henkilo;
 import com.juslin.joulukortit2.bean.HenkiloImpl;
 import com.juslin.joulukortit2.dao.OsoiteDAO;
@@ -51,7 +50,7 @@ public class KirjautumisController {
 		//Henkilo henkilo = dao.etsi(id);
 		//model.addAttribute("henkilo", henkilo);
 		
-		return "henk/view";
+		return "osoitteet";
 	}
 	
 	//FORMIN TIETOJEN VASTAANOTTO
