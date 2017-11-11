@@ -18,20 +18,20 @@ import com.juslin.joulukortit2.dao.HenkiloDAO;
 import com.juslin.joulukortit2.bean.Henkilo;
 import com.juslin.joulukortit2.bean.HenkiloImpl;
 
-import fi.softala.jee.demo.d18.dao.OsoiteDAO;
+import com.juslin.joulukortit2.dao.OsoiteDAO;
 
 @Controller
 @RequestMapping (value="/toiminto")
 public class KirjautumisController {
 	
 	@Inject
-	private HenkiloDAO dao;
+	private OsoiteDAO dao;
 	
-	public HenkiloDAO getDao() {
+	public OsoiteDAO getDao() {
 		return dao;
 	}
 
-	public void setDao(HenkiloDAO dao) {
+	public void setDao(OsoiteDAO dao) {
 		this.dao = dao;
 	}
 	
@@ -52,8 +52,8 @@ public class KirjautumisController {
 		String salasana = kayttaja.getSalasana();
 		System.out.println("KirjautumisController.kirjautumisPaatos()");
 		if(kayttajatunnus.equalsIgnoreCase("pauline") && salasana.equalsIgnoreCase("pauline")) {
-			//List<Osoite> osoitteet = dao.haeKaikki();
-			//model.addAttribute("osoitteet", osoitteet);
+			List<Osoite> osoitteet = dao.haeKaikki();
+			model.addAttribute("osoitteet", osoitteet);
 			return "osoitteet";
 		} else {
 			return "virhe";

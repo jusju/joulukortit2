@@ -9,8 +9,8 @@ import com.juslin.joulukortit2.bean.Osoite;
 
 public interface OsoiteDAO {
 
-	public void talleta(Osoite osoite);
-	public ArrayList<Osoite> haeKaikki(); 
-	public void poista(Integer id);
+	public abstract void talleta(Osoite osoite);
+	public abstract ArrayList<Osoite> haeKaikki(); 
+	public abstract void poista(Integer id);
 	
 }

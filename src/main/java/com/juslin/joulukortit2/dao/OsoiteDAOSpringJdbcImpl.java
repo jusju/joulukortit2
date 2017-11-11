@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.juslin.joulukortit2.bean.Osoite;
 
 @Repository
-public class OsoiteDAOSpringJdbcImpl {
+public class OsoiteDAOSpringJdbcImpl implements OsoiteDAO {
 	
 	@Inject
 	private JdbcTemplate jdbcTemplate;
