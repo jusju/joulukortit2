@@ -50,6 +50,7 @@ public class KirjautumisController {
 	public String getView(@PathVariable Integer id, Model model) {
 		//Henkilo henkilo = dao.etsi(id);
 		//model.addAttribute("henkilo", henkilo);
+		
 		return "henk/view";
 	}
 	
