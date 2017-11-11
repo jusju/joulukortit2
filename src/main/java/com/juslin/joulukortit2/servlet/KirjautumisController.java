@@ -25,6 +25,7 @@ public class KirjautumisController {
 	//FORMIN TIETOJEN VASTAANOTTO
 	@RequestMapping(value="kirjaudu", method=RequestMethod.POST)
 	public String kirjautumisPaatos(@ModelAttribute(value="kayttaja") Kayttaja kayttaja) {
+		
 		System.out.println("KirjautumisController.kirjautumisPaatos()");
 		return "kirjautuminen";
 	}
