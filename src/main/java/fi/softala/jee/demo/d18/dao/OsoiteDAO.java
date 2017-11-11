@@ -1,4 +1,4 @@
-package com.juslin.joulukortit2.dao;
+package fi.softala.jee.demo.d18.dao;
 
 import java.util.ArrayList;
 
