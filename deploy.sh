@@ -1,8 +1,10 @@
 #!/usr/bin/bash
 
+COMMENTS = $1;
+
 git pull;
 git add .;
-git commit -m "next version";
+git commit -m COMMENTS;
 git push;
 mvn clean;
 mvn package; 
