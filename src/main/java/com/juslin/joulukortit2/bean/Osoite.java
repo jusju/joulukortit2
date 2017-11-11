@@ -1,13 +1,21 @@
 package com.juslin.joulukortit2.bean;
 
 public class Osoite {
+	
 	private int id;
+	
 	private String nimi;
+	
 	private String katuosoite;
+	
 	private String postinumero;
+	
 	private String postitoimipaikka;
+	
 	private String osavaltio;
+	
 	private String maa;
+	
 	public int getId() {
 		return id;
 	}

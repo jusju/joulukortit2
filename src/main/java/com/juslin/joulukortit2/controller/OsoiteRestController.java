@@ -18,8 +18,8 @@ public class OsoiteRestController {
 
 	@RequestMapping("henkilot.json")
 	public @ResponseBody List<Osoite> haeHenkilotJSON() {
-		List<Osoite> henkilot = dao.haeKaikki();
-		return henkilot;
+		List<Osoite> osoitteet = dao.haeKaikki();
+		return osoitteet;
 	}
 	
 	@RequestMapping("henkilot")
