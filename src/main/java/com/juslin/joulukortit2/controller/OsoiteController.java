@@ -18,7 +18,7 @@ import com.juslin.joulukortit2.dao.OsoiteDAO;
 
 @Controller
 @RequestMapping (value="/toiminto")
-public class KirjautumisController {
+public class OsoiteController {
 	
 	@Inject
 	private OsoiteDAO dao;
@@ -41,12 +41,30 @@ public class KirjautumisController {
 		return "kirjautuminen";
 	}
 	
+
+	@RequestMapping(value="lisaaosoite", method=RequestMethod.POST)
+	public String lisaaOsoite(@ModelAttribute(value="osoite") Osoite osoite, Model model) {
+		dao.talleta(osoite);
+		List<Osoite> osoitteet = dao.haeKaikki();
+		model.addAttribute("osoitteet", osoitteet);
+		return "osoitteet";
+	}
+	
+	// UUDEN OSOITTEEN LISÄYS
+	@RequestMapping(value="lisaa", method=RequestMethod.GET)
+	public String lisaaOsoite(Model model) {
+		Osoite osoite = new Osoite();
+		model.addAttribute("osoite", osoite);
+		System.out.println("OsoiteController.lisaaOsoite()");
+		return "lisaa_osoite";
+	}
+	
 	//OSOITTEEN TUHOAMINEN
 	@RequestMapping(value="{id}", method=RequestMethod.GET)
 	public String getView(@PathVariable Integer id, Model model) {
-		//Henkilo henkilo = dao.etsi(id);
-		//model.addAttribute("henkilo", henkilo);
-		
+		dao.poista(id);
+		List<Osoite> osoitteet = dao.haeKaikki();
+		model.addAttribute("osoitteet", osoitteet);
 		return "osoitteet";
 	}
 	

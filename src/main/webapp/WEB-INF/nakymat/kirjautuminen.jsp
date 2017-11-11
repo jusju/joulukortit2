@@ -12,7 +12,7 @@
 <body>
 <h1>Kirjaudu</h1>
 
-		<form:form modelAttribute="kayttaja" method="post">
+		<form:form action="kirjaudu" modelAttribute="kayttaja" method="post">
 		  	<fieldset>		
 				<legend>Tunnukset</legend>
 				<p>

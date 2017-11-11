@@ -34,8 +34,8 @@
 		<td><c:out value="${osoite.postitoimipaikka}"/></td>
 		<td><c:out value="${osoite.osavaltio}"/></td>
 		<td><c:out value="${osoite.maa}"/></td>
-		<td><a href="poistaOsoite?id=<c:out value="${osoite.id}"/>">POISTA</a></td>
 		<td><a href="poistaOsoite?id=<c:out value="${osoite.id}"/>">MUOKKAA</a></td>
+		<td><a href="/id=<c:out value="${osoite.id}"/>">POISTA</a></td>
 	</tr>
 </c:forEach>
 </tbody>
@@ -43,7 +43,7 @@
 
 
 <p>
-<a href="OsoitteenLisaysServlet">Lis‰‰ osoite.</a>
+<a href="lisaa">Lis‰‰ osoite.</a>
 </p>
 </body>
 </html>
