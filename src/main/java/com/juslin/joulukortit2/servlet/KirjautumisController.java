@@ -25,8 +25,13 @@ public class KirjautumisController {
 	//FORMIN TIETOJEN VASTAANOTTO
 	@RequestMapping(value="kirjaudu", method=RequestMethod.POST)
 	public String kirjautumisPaatos(@ModelAttribute(value="kayttaja") Kayttaja kayttaja) {
-		
+		String kayttajatunnus = kayttaja.getKayttajatunnus();
+		String salasana = kayttaja.getSalasana();
 		System.out.println("KirjautumisController.kirjautumisPaatos()");
-		return "kirjautuminen";
+		if(kayttajatunnus.equalsIgnoreCase("pauline") && salasana.equalsIgnoreCase("pauline")) {
+			return "kirjautuminen";
+		} else {
+			return "virhe";
+		}
 	}
 }
