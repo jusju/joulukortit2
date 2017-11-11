@@ -1,4 +1,4 @@
-package com.juslin.joulukortit2.servlet;
+package com.juslin.joulukortit2.controller;
 
 import java.util.List;
 
@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -17,7 +18,6 @@ import com.juslin.joulukortit2.bean.Osoite;
 import com.juslin.joulukortit2.dao.HenkiloDAO;
 import com.juslin.joulukortit2.bean.Henkilo;
 import com.juslin.joulukortit2.bean.HenkiloImpl;
-
 import com.juslin.joulukortit2.dao.OsoiteDAO;
 
 @Controller
@@ -36,13 +36,21 @@ public class KirjautumisController {
 	}
 	
 	
-	//FORMIN TIETOJEN VASTAANOTTO
+	//TYHJÄN FORMIN LUONTI
 	@RequestMapping(value="kirjaudu", method=RequestMethod.GET)
-	public String naytaKirjautuminen(Model model) {
+	public String tyhjanForminLuonti(Model model) {
 		Kayttaja kayttaja = new Kayttaja();
 		model.addAttribute("kayttaja", kayttaja);
 		System.out.println("KirjautumisController.kirjautumisLogiikka()");
 		return "kirjautuminen";
+	}
+	
+	//OSOITTEEN TUHOAMINEN
+	@RequestMapping(value="{id}", method=RequestMethod.GET)
+	public String getView(@PathVariable Integer id, Model model) {
+		//Henkilo henkilo = dao.etsi(id);
+		//model.addAttribute("henkilo", henkilo);
+		return "henk/view";
 	}
 	
 	//FORMIN TIETOJEN VASTAANOTTO

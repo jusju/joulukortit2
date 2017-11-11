@@ -1,4 +1,4 @@
-package com.juslin.joulukortit2.servlet;
+package com.juslin.joulukortit2.controller;
 
 import javax.inject.Inject;
 
