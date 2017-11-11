@@ -8,10 +8,24 @@
   <description>Joulukorttien lähettelyä - Maven mukana</description>
   <build>
   	<finalName>joulukortit2</finalName>
+  	    <pluginManagement>
+        <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <attachClasses>true</attachClasses>
+                    <classesClassifier>classes</classesClassifier>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </pluginManagement>
   </build>
     
   <properties>
 		<spring.version>4.0.0.RELEASE</spring.version>
+		
   </properties>
   
   <dependencies>
