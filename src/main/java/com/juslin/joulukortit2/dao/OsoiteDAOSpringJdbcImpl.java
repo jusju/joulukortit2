@@ -62,10 +62,10 @@ public class OsoiteDAOSpringJdbcImpl implements OsoiteDAO {
 
 	}
 	public void paivita(Osoite osoite) {
-		String sql = "UPDATE Osoitteet SET nimi = '?', katuosoite = '?', postinumero = '?'," +
-		" postitoimipaikka = '?', osavaltio = '?', maa = '?' WHERE id = ?";
+		String sql = "UPDATE Osoitteet SET nimi = ?, katuosoite = ?, postinumero = ?," +
+		" postitoimipaikka = ?, osavaltio = ?, maa = ? WHERE id = ?";
 		Object[] parametrit = new Object[] { osoite.getNimi(), osoite.getKatuosoite(), osoite.getPostinumero(),
-				osoite.getPostitoimipaikka(), osoite.getOsavaltio(), osoite.getMaa() };
+				osoite.getPostitoimipaikka(), osoite.getOsavaltio(), osoite.getMaa(), osoite.getId() };
 		jdbcTemplate.update(sql, parametrit);
 	}
 	

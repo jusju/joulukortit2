@@ -15,3 +15,5 @@ TODO:
 - Voimakas responsiiviyys - buttonit pois -> Sliderit
 - Spring Security
 - Spring boot
+- Hardening of the server
+- HTTPS

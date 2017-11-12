@@ -42,27 +42,7 @@ public class OsoiteController {
 	}
 	
 
-	@RequestMapping(value="lisaaosoite", method=RequestMethod.POST)
-	public String lisaaOsoite(@ModelAttribute(value="osoite") Osoite osoite, Model model) {
-		if(dao.etsi(osoite.getId()) != null) {
-			dao.talleta(osoite);	
-		} else {
-			dao.paivita(osoite);
-		}
-		
-		List<Osoite> osoitteet = dao.haeKaikki();
-		model.addAttribute("osoitteet", osoitteet);
-		return "osoitteet";
-	}
-	
-	// UUDEN OSOITTEEN LISÄYS
-	@RequestMapping(value="lisaa", method=RequestMethod.GET)
-	public String lisaaOsoite(Model model) {
-		Osoite osoite = new Osoite();
-		model.addAttribute("osoite", osoite);
-		System.out.println("OsoiteController.lisaaOsoite()");
-		return "lisaa_osoite";
-	}
+
 	
 	//OSOITTEEN TUHOAMINEN
 	@RequestMapping(value="{id}", method=RequestMethod.GET)
@@ -72,13 +52,7 @@ public class OsoiteController {
 		model.addAttribute("osoitteet", osoitteet);
 		return "osoitteet";
 	}
-	//OSOITTEEN PAIVITTAMINEN
-	@RequestMapping(value="/muokkaa/{id}", method=RequestMethod.GET)
-	public String muokkaaOsoitetta(@PathVariable Integer id, Model model) {
-		Osoite osoite = dao.etsi(id);
-		model.addAttribute("osoite", osoite);
-		return "lisaa_osoite";
-	}
+
 	
 	//FORMIN TIETOJEN VASTAANOTTO
 	@RequestMapping(value="kirjaudu", method=RequestMethod.POST)
