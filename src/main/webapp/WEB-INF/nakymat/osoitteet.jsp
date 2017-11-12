@@ -34,7 +34,7 @@
 		<td><c:out value="${osoite.postitoimipaikka}"/></td>
 		<td><c:out value="${osoite.osavaltio}"/></td>
 		<td><c:out value="${osoite.maa}"/></td>
-		<td><a href="poistaOsoite?id=<c:out value="${osoite.id}"/>">MUOKKAA</a></td>
+		<td><a href="/joulukortit2/muokkaa/<c:out value="${osoite.id}"/>">MUOKKAA</a></td>
 		<td><a href="/joulukortit2/toiminto/<c:out value="${osoite.id}"/>">POISTA</a></td>
 	</tr>
 </c:forEach>
