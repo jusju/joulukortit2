@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Osoitteet</title>
 </head>
 <body>
@@ -35,7 +35,7 @@
 		<td><c:out value="${osoite.osavaltio}"/></td>
 		<td><c:out value="${osoite.maa}"/></td>
 		<td><a href="poistaOsoite?id=<c:out value="${osoite.id}"/>">MUOKKAA</a></td>
-		<td><a href="/id=<c:out value="${osoite.id}"/>">POISTA</a></td>
+		<td><a href="/joulukortit2/toiminto/<c:out value="${osoite.id}"/>">POISTA</a></td>
 	</tr>
 </c:forEach>
 </tbody>
@@ -43,7 +43,7 @@
 
 
 <p>
-<a href="lisaa">Lisää osoite.</a>
+<a href="lisaa">LisÃ¤Ã¤ osoite.</a>
 </p>
 </body>
 </html>
