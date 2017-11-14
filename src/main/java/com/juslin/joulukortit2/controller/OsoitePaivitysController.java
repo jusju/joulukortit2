@@ -33,7 +33,7 @@ public class OsoitePaivitysController {
 	@RequestMapping(value="lisaa", method=RequestMethod.GET)
 	public String lisaaOsoite(Model model) {
 		Osoite osoite = new Osoite();
-		osoite.setId(1);
+		osoite.setId(-1);
 		model.addAttribute("osoite", osoite);
 		System.out.println("OsoiteController.lisaaOsoite()");
 		return "lisaa_osoite";
@@ -53,7 +53,7 @@ public class OsoitePaivitysController {
 		System.out.println("OsoitePaivitysController.osoiteLisays()");
 		
 		if(osoite != null) {
-			if((osoite.getId()) != 1) {
+			if((osoite.getId()) != -1) {
 				dao.paivita(osoite);
 			} else {
 				dao.talleta(osoite);					
