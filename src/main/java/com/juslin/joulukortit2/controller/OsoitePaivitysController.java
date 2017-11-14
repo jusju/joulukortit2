@@ -51,7 +51,7 @@ public class OsoitePaivitysController {
 	@RequestMapping(value="osoitelisays", method=RequestMethod.POST)
 	public String osoiteLisays(@ModelAttribute(value="osoite") Osoite osoite, Model model) {
 		System.out.println("OsoitePaivitysController.osoiteLisays()");
-		Map<String, Object> arvot = model.asMap();
+		
 		if(osoite != null) {
 			if((osoite.getId()) != 1) {
 				dao.paivita(osoite);
