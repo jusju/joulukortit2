@@ -1,4 +1,4 @@
-package com.juslin.joulukortit2.controller;
+ poipackage com.juslin.joulukortit2.controller;
 
 import java.util.List;
 
