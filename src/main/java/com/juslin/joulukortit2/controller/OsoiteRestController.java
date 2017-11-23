@@ -16,6 +16,7 @@ public class OsoiteRestController {
 	@Inject
 	OsoiteDAO dao;
 
+	
 	@RequestMapping("henkilot.json")
 	public @ResponseBody List<Osoite> haeHenkilotJSON() {
 		List<Osoite> osoitteet = dao.haeKaikki();

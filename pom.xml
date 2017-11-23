@@ -74,7 +74,17 @@
 		<artifactId>jackson-databind</artifactId>
 		<version>2.3.0</version>
 	</dependency>
-  	
+	<!-- https://mvnrepository.com/artifact/com.thetransactioncompany/cors-filter -->
+	<dependency>
+    	<groupId>com.thetransactioncompany</groupId>
+    	<artifactId>cors-filter</artifactId>
+    	<version>2.6</version>
+	</dependency>
+	<dependency>
+    	<groupId>com.allenru</groupId>
+    	<artifactId>cross-origin</artifactId>
+    	<version>1.0.1</version>
+	</dependency> 	
   </dependencies>
  
 </project>
