@@ -44,7 +44,7 @@
 				</p>
 		
 				<p>	
-					<button type="submit">Lis‰‰</button>
+					<button type="submit">Talleta</button>
 				</p>
 			</fieldset>
 		</form:form>
