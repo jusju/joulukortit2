@@ -1,9 +1,12 @@
 package com.juslin.joulukortit2.bean;
 
+import javax.validation.constraints.Size;
+
 public class Osoite {
 	
 	private int id;
 	
+	@Size(min = 1, max = 255)
 	private String nimi;
 	
 	private String katuosoite;
