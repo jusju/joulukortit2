@@ -1,5 +1,10 @@
 package com.juslin.joulukortit2.bean;
 
+/**
+ * 
+ * @author Jukka Juslin
+ *
+ */
 public class Kayttaja {
 
 	private int id;
