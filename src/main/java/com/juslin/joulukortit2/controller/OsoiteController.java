@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.juslin.joulukortit2.bean.Kayttaja;
-import com.juslin.joulukortit2.bean.Osoite;
+import com.juslin.joulukortit2.bean.OsoiteImpl;
 
 import com.juslin.joulukortit2.dao.OsoiteDAO;
 
@@ -48,7 +48,7 @@ public class OsoiteController {
 	@RequestMapping(value="{id}", method=RequestMethod.GET)
 	public String getView(@PathVariable Integer id, Model model) {
 		dao.poista(id);
-		List<Osoite> osoitteet = dao.haeKaikki();
+		List<OsoiteImpl> osoitteet = dao.haeKaikki();
 		model.addAttribute("osoitteet", osoitteet);
 		return "osoitteet";
 	}
@@ -61,7 +61,7 @@ public class OsoiteController {
 		String salasana = kayttaja.getSalasana();
 		System.out.println("KirjautumisController.kirjautumisPaatos()");
 		if(kayttajatunnus.equalsIgnoreCase("pauline") && salasana.equalsIgnoreCase("pauline")) {
-			List<Osoite> osoitteet = dao.haeKaikki();
+			List<OsoiteImpl> osoitteet = dao.haeKaikki();
 			model.addAttribute("osoitteet", osoitteet);
 			return "osoitteet";
 		} else {

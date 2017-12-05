@@ -9,7 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.juslin.joulukortit2.bean.Osoite;
+import com.juslin.joulukortit2.bean.OsoiteImpl;
 
 
 @Repository
@@ -26,18 +26,18 @@ public class OsoiteDAOSpringJdbcImpl implements OsoiteDAO {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 
-	public void talleta(Osoite osoite) {
+	public void talleta(OsoiteImpl osoite) {
 		String sql = "INSERT INTO Osoitteet(nimi, katuosoite, postinumero, postitoimipaikka, osavaltio,maa) VALUES(?,?,?,?,?,?)";
 		Object[] parametrit = new Object[] { osoite.getNimi(), osoite.getKatuosoite(), osoite.getPostinumero(),
 				osoite.getPostitoimipaikka(), osoite.getOsavaltio(), osoite.getMaa() };
 		jdbcTemplate.update(sql, parametrit);
 	}
 
-	public ArrayList<Osoite> haeKaikki() {
+	public ArrayList<OsoiteImpl> haeKaikki() {
 		String sql = "SELECT id, nimi, katuosoite, postinumero, postitoimipaikka, osavaltio, maa FROM "
 				+ " Osoitteet ORDER BY nimi";
-		RowMapper<Osoite> mapper = new OsoiteRowMapper();
-		ArrayList<Osoite> osoitteet = (ArrayList<Osoite>) jdbcTemplate.query(sql, mapper);
+		RowMapper<OsoiteImpl> mapper = new OsoiteRowMapper();
+		ArrayList<OsoiteImpl> osoitteet = (ArrayList<OsoiteImpl>) jdbcTemplate.query(sql, mapper);
 		return osoitteet;
 	}
 	
@@ -47,12 +47,12 @@ public class OsoiteDAOSpringJdbcImpl implements OsoiteDAO {
 		jdbcTemplate.update(sql, parametrit);
 	}
 	
-	public Osoite etsi(int id) {
+	public OsoiteImpl etsi(int id) {
 		String sql = "SELECT id, nimi, katuosoite, postinumero, postitoimipaikka, osavaltio, maa FROM Osoitteet WHERE id = ?";
 		Object[] parametrit = new Object[] { id };
-		RowMapper<Osoite> mapper = new OsoiteRowMapper();
+		RowMapper<OsoiteImpl> mapper = new OsoiteRowMapper();
 
-		Osoite o;
+		OsoiteImpl o;
 		try {
 			o = jdbcTemplate.queryForObject(sql, parametrit, mapper);
 		} catch (IncorrectResultSizeDataAccessException e) {
@@ -61,7 +61,7 @@ public class OsoiteDAOSpringJdbcImpl implements OsoiteDAO {
 		return o;
 
 	}
-	public void paivita(Osoite osoite) {
+	public void paivita(OsoiteImpl osoite) {
 		String sql = "UPDATE Osoitteet SET nimi = ?, katuosoite = ?, postinumero = ?," +
 		" postitoimipaikka = ?, osavaltio = ?, maa = ? WHERE id = ?";
 		Object[] parametrit = new Object[] { osoite.getNimi(), osoite.getKatuosoite(), osoite.getPostinumero(),

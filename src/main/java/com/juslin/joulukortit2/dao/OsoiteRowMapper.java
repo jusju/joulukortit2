@@ -5,13 +5,13 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.juslin.joulukortit2.bean.Osoite;
+import com.juslin.joulukortit2.bean.OsoiteImpl;
 
 
-public class OsoiteRowMapper implements RowMapper<Osoite> {
+public class OsoiteRowMapper implements RowMapper<OsoiteImpl> {
 
-	public Osoite mapRow(ResultSet rs, int rowNum) throws SQLException {
-		Osoite o = new Osoite();
+	public OsoiteImpl mapRow(ResultSet rs, int rowNum) throws SQLException {
+		OsoiteImpl o = new OsoiteImpl();
 		o.setId(rs.getInt("id"));
 		o.setNimi(rs.getString("nimi"));
 		o.setKatuosoite(rs.getString("katuosoite"));

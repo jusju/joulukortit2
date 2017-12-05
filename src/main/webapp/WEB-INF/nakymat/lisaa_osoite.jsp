@@ -8,6 +8,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Lisää osoite</title>
 </head>
+
+<spring:hasBindErrors name="osoite">
+	<p/> Virhetta pukkaa</p>
+</spring:hasBindErrors>
 <body>
 <h1>Lisää osoite</h1>
 

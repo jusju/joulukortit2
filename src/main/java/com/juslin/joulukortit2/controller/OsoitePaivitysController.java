@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.juslin.joulukortit2.bean.Osoite;
+import com.juslin.joulukortit2.bean.OsoiteImpl;
 import com.juslin.joulukortit2.dao.OsoiteDAO;
 import org.springframework.validation.BindingResult;
 
@@ -36,7 +36,7 @@ public class OsoitePaivitysController {
 	// UUDEN OSOITTEEN LISÄYS
 	@RequestMapping(value="lisaa", method=RequestMethod.GET)
 	public String lisaaOsoite(Model model) {
-		Osoite osoite = new Osoite();
+		OsoiteImpl osoite = new OsoiteImpl();
 		osoite.setId(-1);
 		model.addAttribute("osoite", osoite);
 		System.out.println("OsoiteController.lisaaOsoite()");
@@ -47,14 +47,20 @@ public class OsoitePaivitysController {
 	//OSOITTEEN PAIVITTAMINEN
 	@RequestMapping(value="{id}", method=RequestMethod.GET)
 	public String muokkaaOsoitetta(@PathVariable Integer id, Model model) {
-		Osoite osoite = dao.etsi(id);
+		OsoiteImpl osoite = dao.etsi(id);
 		model.addAttribute("osoite", osoite);
 		return "lisaa_osoite";
 	}
 	
 	@RequestMapping(value="osoitelisays", method=RequestMethod.POST)
-	public String osoiteLisays(@ModelAttribute(value="osoite") @Valid Osoite osoite, Model model, BindingResult result) {
+	public String osoiteLisays(@ModelAttribute(value="osoite") @Valid OsoiteImpl osoite, Model model, BindingResult result) {
 		System.out.println("OsoitePaivitysController.osoiteLisays()");
+		List<OsoiteImpl> osoitteet = dao.haeKaikki();
+		model.addAttribute("osoitteet", osoitteet);
+		
+		if (result.hasErrors()) {
+			return "../nakymat/lisaa_osoite";
+		} 
 		
 		if(osoite != null) {
 			if((osoite.getId()) != -1) {
@@ -63,9 +69,6 @@ public class OsoitePaivitysController {
 				dao.talleta(osoite);					
 			}
 		}
-
-		List<Osoite> osoitteet = dao.haeKaikki();
-		model.addAttribute("osoitteet", osoitteet);
-		return "osoitteet";
+		return "../nakymat/osoitteet";
 	}
 }
