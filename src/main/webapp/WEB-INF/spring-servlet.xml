@@ -7,7 +7,6 @@
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-
 	<context:component-scan base-package="com.juslin.joulukortit2" />
 
 	<!-- Resolves view names to protected .jsp resources within the /WEB-INF/views 
@@ -18,12 +17,8 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-
 	<!-- Configures the @Controller programming model -->
 	<mvc:annotation-driven />
-
-	<!-- Forwards requests to the "/" resource to the "welcome" view -->
-	<mvc:view-controller path="/" view-name="index" />
 	
 	<!-- location of static content (images, js and css files) -->
 	<mvc:resources mapping="/resources/**" location="/resources/" />
