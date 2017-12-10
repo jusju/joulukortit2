@@ -53,10 +53,8 @@ public class OsoitePaivitysController {
 	}
 	
 	@RequestMapping(value="osoitelisays", method=RequestMethod.POST)
-	public String osoiteLisays(@ModelAttribute(value="osoite") @Valid OsoiteImpl osoite, Model model, BindingResult result) {
+	public String osoiteLisays(@ModelAttribute(value="osoite") @Valid OsoiteImpl osoite, BindingResult result, Model model) {
 		System.out.println("OsoitePaivitysController.osoiteLisays()");
-		List<OsoiteImpl> osoitteet = dao.haeKaikki();
-		model.addAttribute("osoitteet", osoitteet);
 		
 		if (result.hasErrors()) {
 			return "../nakymat/lisaa_osoite";
@@ -69,6 +67,10 @@ public class OsoitePaivitysController {
 				dao.talleta(osoite);					
 			}
 		}
+		List<OsoiteImpl> osoitteet = dao.haeKaikki();
+		model.addAttribute("osoitteet", osoitteet);
+		
+		
 		return "../nakymat/osoitteet";
 	}
 }
