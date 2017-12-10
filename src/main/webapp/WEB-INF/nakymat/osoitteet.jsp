@@ -43,7 +43,7 @@
 
 
 <p>
-<a href="../kasky/lisaa">Lis‰‰ osoite.</a>
+<a href="../kasky/lisaa?uudenluonti=uudenluonti">Lis‰‰ osoite.</a>
 </p>
 </body>
 </html>

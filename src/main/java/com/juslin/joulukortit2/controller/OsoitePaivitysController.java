@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.juslin.joulukortit2.bean.OsoiteImpl;
 import com.juslin.joulukortit2.dao.OsoiteDAO;
@@ -35,9 +36,12 @@ public class OsoitePaivitysController {
 	}
 	// UUDEN OSOITTEEN LISÄYS
 	@RequestMapping(value="lisaa", method=RequestMethod.GET)
-	public String lisaaOsoite(Model model) {
+	public String lisaaOsoite(@RequestParam("uudenluonti") String uudenluonti, Model model) {
 		OsoiteImpl osoite = new OsoiteImpl();
 		osoite.setId(-1);
+		if(uudenluonti != null) {
+			model.addAttribute("uudenluonti", "uudenluonti");
+		}
 		model.addAttribute("osoite", osoite);
 		System.out.println("OsoiteController.lisaaOsoite()");
 		return "lisaa_osoite";

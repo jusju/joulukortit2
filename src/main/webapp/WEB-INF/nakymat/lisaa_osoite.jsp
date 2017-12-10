@@ -9,10 +9,21 @@
 <title>Lis‰‰ osoite</title>
 </head>
 
+<%
+  String uudenluonti = null;
+  uudenluonti = (String)request.getAttribute("uudenluonti");
+  if(uudenluonti == null) {
+%>
+
 <spring:hasBindErrors name="osoite">
 	<p/> Virhetta pukkaa</p>
 </spring:hasBindErrors>
 <body>
+
+<%
+  }
+%>
+
 <h1>Lis‰‰ osoite</h1>
 
 		<form:form action="osoitelisays" modelAttribute="osoite" method="post">
